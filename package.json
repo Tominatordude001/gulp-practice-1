@@ -1,0 +1,25 @@
+{
+  "name": "gulp-practice_1",
+  "version": "1.0.0",
+  "description": "gulp practice",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tominatordude001/gulp-practice-1.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tominatordude001/gulp-practice-1/issues"
+  },
+  "homepage": "https://github.com/Tominatordude001/gulp-practice-1#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
