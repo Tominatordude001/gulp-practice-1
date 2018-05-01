@@ -1,6 +1,14 @@
+// https://css-tricks.com/gulp-for-beginners/
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
+var useref = require('gulp-useref');
+var uglify = require('gulp-uglify');
+var gulpif = require('gulp-if');
+var cssnano = require('gulp-cssnano');
+var imagemin = require('gulp-imagemin');
+var del = require('del');
 
 /* gulp.task('hello', function() {
     // stuff here
@@ -31,3 +39,32 @@ gulp.task('browserSync', function() {
         },
     })
 });
+
+gulp.task('useref', function() {
+    return gulp.src('app/*.html')
+    .pipe(useref())
+    // Minifies onlyif it's a Javascript file
+    .pipe(gulpif('*.js', uglify()))
+    // Minifies only if it's a CSS file
+    .pipe(gulpif('*.css', cssnano()))
+    .pipe(gulp.dest('dist'))
+});
+
+gulp.task('images', function() {
+    return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+    .pipe(imagemin({
+        // Setting interlaced to true
+        interlaced: true
+    }))
+    .pipe(gulp.dest('dist/images'))
+});
+
+gulp.task('fonts', function() {
+    return gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
+});
+
+gulp.task('clean:dist', function() {
+    return del.sync('dist');
+});
+

@@ -21,7 +21,15 @@
   "homepage": "https://github.com/Tominatordude001/gulp-practice-1#readme",
   "devDependencies": {
     "browser-sync": "^2.23.7",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1"
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.5"
+  },
+  "dependencies": {
+    "gulp-cssnano": "^2.1.3"
   }
 }

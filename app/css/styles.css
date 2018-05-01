@@ -7,4 +7,9 @@
   background-color: red; }
 
 h1 {
-  color: #007acc; }
+  color: #0003cc; }
+
+p {
+  font-size: 1.5rem;
+  color: red;
+  font-style: italic; }
